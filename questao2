@@ -1,0 +1,29 @@
+# Captura o número informado pelo usuário
+numero = int(input("Digite um número para verificar se pertence à sequência de Fibonacci: "))
+
+# Inicializa as variáveis para os dois primeiros números da sequência
+fibonacci1 = 0
+fibonacci2 = 1
+
+# Verifica se o número informado é um dos dois primeiros números da sequência
+if numero == fibonacci1 or numero == fibonacci2:
+    print(f"O número {numero} pertence à sequência de Fibonacci.")
+else:
+    # Inicializa a variável para armazenar o próximo número da sequência
+    proximo_fibonacci = fibonacci1 + fibonacci2
+
+    # Enquanto o próximo número da sequência for menor ou igual ao número informado, continua o loop
+    while proximo_fibonacci <= numero:
+        # Verifica se o número informado é igual ao próximo número da sequência
+        if proximo_fibonacci == numero:
+            print(f"O número {numero} pertence à sequência de Fibonacci.")
+            break
+
+        # Atualiza as variáveis para os próximos números da sequência
+        fibonacci1 = fibonacci2
+        fibonacci2 = proximo_fibonacci
+        proximo_fibonacci = fibonacci1 + fibonacci2
+
+    # Se o próximo número da sequência for maior que o número informado, significa que o número não pertence à sequência
+    if proximo_fibonacci > numero:
+        print(f"O número {numero} não pertence à sequência de Fibonacci.")
