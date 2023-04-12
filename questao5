@@ -1,0 +1,21 @@
+# Define a string a ser invertida
+string = "exemplo de string"
+
+# Converte a string em uma lista de caracteres
+lista_caracteres = list(string)
+
+# Define os índices para início e fim da lista
+inicio = 0
+fim = len(lista_caracteres) - 1
+
+# Itera sobre a lista, trocando os caracteres do início com os do fim
+while inicio < fim:
+    lista_caracteres[inicio], lista_caracteres[fim] = lista_caracteres[fim], lista_caracteres[inicio]
+    inicio += 1
+    fim -= 1
+
+# Converte a lista de caracteres de volta para uma string
+string_invertida = "".join(lista_caracteres)
+
+# Imprime a string invertida
+print(string_invertida)
